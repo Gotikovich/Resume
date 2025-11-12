@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --bg: #171a20;
+      --card: #232733cc;
+      --primary: #bfc2c9;
+      --accent: #8ab4f8;
+      --cloud1: #272b33;
+      --cloud2: #1d2026;
+      --shadow: 0 6px 32px 0 #0004, 0 1.5px 2px 0 #2222;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      background: linear-gradient(135deg, var(--bg) 60%, var(--cloud1) 100%);
+      color: var(--primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Cloudy effect */
+    .cloud {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.18;
+      filter: blur(8px);
+      pointer-events: none;
+      z-index: 0;
+      background: var(--cloud1);
+      animation: floatCloud 18s infinite ease-in-out alternate;
+    }
+    .cloud.c1 { width: 370px; height:180px; top: 40px; left: 10vw; animation-delay: 0s; }
+    .cloud.c2 { width: 250px; height:100px; top: 280px; left: 70vw; background: var(--cloud2); animation-delay: 4s;}
+    .cloud.c3 { width: 400px; height:130px; top: 510px; left: 40vw; animation-delay: 9s;}
+    .cloud.c4 { width: 280px; height:140px; top: 110px; left: 80vw; animation-delay: 2s;}
+    @keyframes floatCloud {
+      to { transform: translateY(40px) scale(1.08); opacity: 0.27;}
+    }
+
+    .resume-container {
+      position: relative;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      border-radius: 18px;
+      margin: 60px auto 40px auto;
+      padding: 52px 38px;
+      max-width: 460px;
+      width: 90vw;
+      z-index: 1;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .name {
+      color: var(--primary);
+      font-size: 2.15rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    .title {
+      color: var(--accent);
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      letter-spacing: 0.6px;
+    }
+    .contact {
+      font-size: 0.93rem;
+      color: #9fa3b1;
+      margin-top: 8px;
+      line-height: 1.7;
+    }
+    .section {
+      margin-top: 28px;
+    }
+    .section-title {
+      color: var(--accent);
+      font-size: 1.08rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      border-left: 3px solid var(--accent);
+      padding-left: 10px;
+    }
+    .skills-list,
+    .exp-list,
+    .edu-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+    .skills-list li {
+      display: inline-block;
+      margin: 6px 10px 6px 0;
+      padding: 7px 16px;
+      border-radius: 14px;
+      background: #22292f80;
+      color: var(--primary);
+      font-size: 0.94rem;
+      font-weight: 500;
+      box-shadow: 0 1px 6px #2224;
+    }
+    .exp-list li,
+    .edu-list li {
+      margin-bottom: 15px;
+      font-size: 0.98rem;
+      line-height: 1.5;
+    }
+    .exp-title {
+      color: var(--primary);
+      font-weight: 500;
+    }
+    .exp-duration,
+    .edu-duration {
+      color: #969ab5;
+      font-size: 0.95em;
+      margin-left: 3px;
+    }
+    @media (max-width:600px) {
+      .resume-container {
+        padding: 32px 9vw;
+        margin: 22px 0;
+      }
+      .header .name {
+        font-size: 1.35rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <span class="cloud c1"></span>
+  <span class="cloud c2"></span>
+  <span class="cloud c3"></span>
+  <span class="cloud c4"></span>
+  <main class="resume-container">
+    <header class="header">
+      <div class="name">Anton Mazurok</div>
+      <div class="title">Junior Developer</div>
+      <div class="contact">
+        magarik38@gmail.com<br>
+        Ekaterinburg, RU
+      </div>
+    </header>
+    <section class="section">
+      <div class="section-title">Skills</div>
+      <ul class="skills-list">
+        <li>C#</li>
+        <li>SQL</li>
+        <li>C++</li>
+        <li>HTML/CSS</li>
+        <li>Python</li>
+      </ul>
+    </section>
+    <section class="section">
+      <div class="section-title">Experience</div>
+      <ul class="exp-list">
+        <li>
+          <span class="exp-title">Buisness Sсhool – Juinor Developer</span>
+          <span class="exp-duration">(2021–2021)</span><br>
+          Creation of a CRM system and its integration into the company's operations.
+        </li>
+      </ul>
+    </section>
+    <section class="section">
+      <div class="section-title">Education</div>
+      <ul class="edu-list">
+        <li>
+          <b>Information systems</b> 
+          <span class="edu-duration">– Ural Radio engineering College, 2022</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
